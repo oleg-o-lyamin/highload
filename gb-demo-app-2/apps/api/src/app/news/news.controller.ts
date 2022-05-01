@@ -20,11 +20,12 @@ export interface PeaceOfNews {
 @Controller('news')
 export class NewsController {
   private cache: { last: number, news: PeaceOfNews[] | null } = { last: 0, news: null };
+  private IS_CACHE_ON = false;
 
   @Get()
   async getNews() {
     return new Promise(resolve => {
-      if (this.cache.last && this.cache.news && (Date.now() - this.cache.last < 10000)) {
+      if (this.IS_CACHE_ON && this.cache.last && this.cache.news && (Date.now() - this.cache.last < 10000)) {
         console.log(`Fetching cache, timestamp ${this.cache.last}`)
         setTimeout(() => {
           resolve(this.cache.news)
