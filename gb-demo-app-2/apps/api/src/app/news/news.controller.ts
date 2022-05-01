@@ -20,7 +20,7 @@ export interface PeaceOfNews {
 @Controller('news')
 export class NewsController {
   private cache: { last: number, news: PeaceOfNews[] | null } = { last: 0, news: null };
-  private IS_CACHE_ON = false;
+  private IS_CACHE_ON = true;
 
   @Get()
   async getNews() {
