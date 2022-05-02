@@ -103,4 +103,4 @@ dist
 # TernJS port file
 .tern-port
 
-gb-demo-app-2/node_modules/
+node-addon-test-master/node_modules/
