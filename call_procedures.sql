@@ -7,7 +7,7 @@ END
 
 CREATE PROCEDURE AverageGradeByTeacherId(@id int)
 BEGIN
-	SELECT AVG(grade) FROM achievements WHERE teacher_id = 1;
+	SELECT AVG(grade) FROM achievements WHERE teacher_id = @id;
 END
 
 ---
